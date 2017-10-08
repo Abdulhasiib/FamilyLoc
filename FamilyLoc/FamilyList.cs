@@ -20,7 +20,7 @@ namespace DataOfFamily
             //To enter user details
             Participant.MemberAdd();
 
-            string participantName = Participant.MemberGender + Participant.MemberFirstName + " " + Participant.MemberLastName;
+            string participantName = Participant.MemberPrefix + Participant.MemberFirstName + " " + Participant.MemberLastName;
 
             //Greetings to user.
             Console.WriteLine("Hello, " + participantName + ". ");
@@ -44,11 +44,6 @@ namespace DataOfFamily
             //To add Family member details
             Console.WriteLine("Would you tell us about your family members?");
 
-            /*
-            string[] familyMembers = new string[members];
-
-            familyMembers[0] = participantName;
-            */
 
             //List of family
             List<Member> UserFamily = new List<Member>();
@@ -79,7 +74,7 @@ namespace DataOfFamily
 
             foreach (Member familymember in UserFamily)
             {
-                Console.WriteLine(familymember.MemberGender + familymember.MemberFirstName + " " + familymember.MemberLastName);
+                Console.WriteLine(familymember.MemberPrefix + familymember.MemberFirstName + " " + familymember.MemberLastName + " " + familymember.RelationWithUser);
             }
 
             Console.ReadLine();
@@ -108,6 +103,9 @@ namespace DataOfFamily
         //Occupation of the Member
         public string MemberOccupation { get; set; }
 
+        //Member Prefix
+        public string MemberPrefix { get; set; }
+
 
         /// <summary>
         /// To Get the Name of the Member
@@ -133,7 +131,7 @@ namespace DataOfFamily
             //Last Name of Member
             Console.Write("Enter Last Name: ");
             string userLastName = Console.ReadLine();
-            MemberLastName = userFirstName;
+            MemberLastName = userLastName;
 
             //Gender of Member
             Console.Write("Enter Gender. Enter M/F. ");
@@ -142,6 +140,7 @@ namespace DataOfFamily
 
             //Name prefix.
             string prefix = (gender == "M") ? "Mr. " : "Mrs. ";
+            MemberPrefix = prefix;
 
             //Age of Member
             Console.Write("Enter Age: ");
@@ -149,7 +148,7 @@ namespace DataOfFamily
             MemberAge = memberAge;
 
             //Relation of Member with User
-            Console.Write("Tell us your relation WITH {0} {1} {2} : ", prefix, userFirstName + " ", userLastName);
+            Console.Write("Tell us your relation with {0} {1} {2} : ", prefix, userFirstName + " ", userLastName);
             string Relation = Console.ReadLine();
             RelationWithUser = Relation;
 
