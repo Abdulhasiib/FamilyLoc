@@ -15,7 +15,7 @@ namespace DataOfFamily
 
             string participantName = memberName();
 
-            Console.WriteLine("Hello,   " + participantName + ". ");
+            Console.WriteLine("Hello, " + participantName + ". ");
             Console.Write("Tell us about your family. " +
                 "Howmany members you've in your family? " +
                 "Enter member  : ");
@@ -86,5 +86,27 @@ namespace DataOfFamily
             //Return Member details
             return prefix + userFirstName + " " + userLastName + " " + memberAge + "years   " + " " + Relation;
         }
+    }
+
+    class Member
+    {
+        //First Name of the Member
+        public string MemberFirstName { get; set; }
+
+        //Last Name of the Member
+        public string MemberLastName { get; set; }
+
+        //Gender of the Member
+        public char MemberGender { get; set; }
+
+        //Age of the Member
+        public int MemberAge { get; set; }
+
+        //Relation of Member with the User
+        public string RelationWithUser { get; set; }
+
+        //Occupation of the Member
+        public string MemberOccupation { get; set; }
+
     }
 }
