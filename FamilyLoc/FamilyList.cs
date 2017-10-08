@@ -10,8 +10,9 @@ namespace DataOfFamily
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine("Welcome to the Family game.");
+            
+            Console.WriteLine("Welcome to the Family game. " +
+                              "Tell us your Name?");
 
             string participantName = memberName();
 
@@ -23,11 +24,11 @@ namespace DataOfFamily
 
             if (members > 5)
             {
-                Console.WriteLine("   Wow! you've a big family.....");
+                Console.WriteLine("Wow! you've a big family.");
             }
             else
             {
-                Console.WriteLine("Cool! yours is a compact family. Cool!");
+                Console.WriteLine("Cool! yours is a compact family.");
             }
 
             Console.WriteLine("Tell us about your family members, how many?");
@@ -60,17 +61,23 @@ namespace DataOfFamily
 
         private static string memberName()
         {
+            //Member Class Initialization
+            Member UserFamilyMember = new Member();
+
             //First Name of Member
             Console.Write("Enter First Name: ");
             string userFirstName = Console.ReadLine();
+            UserFamilyMember.MemberFirstName = userFirstName;
 
             //Last Name of Member
             Console.Write("Enter Last Name: ");
             string userLastName = Console.ReadLine();
+            UserFamilyMember.MemberLastName = userFirstName;
 
             //Gender of Member
             Console.Write("Enter Gender. Enter M/F. ");
             string gender = Console.ReadLine();
+            UserFamilyMember.MemberGender = gender;
 
             //Name prefix.
             string prefix = (gender == "M") ? "Mr. " : "Mrs. ";
@@ -78,13 +85,20 @@ namespace DataOfFamily
             //Age of Member
             Console.Write("Enter Age: ");
             int memberAge = Int32.Parse(Console.ReadLine());
+            UserFamilyMember.MemberAge = memberAge;
 
             //Relation of Member with User
             Console.Write("Tell us your relation WITH {0} {1} {2}", prefix, userFirstName + " ", userLastName);
             string Relation = Console.ReadLine();
+            UserFamilyMember.RelationWithUser = Relation;
+
+            //Occupation of Member
+            Console.Write("What do {0} {1} {2} do for living?", prefix, userFirstName + " ", userLastName);
+            string memberOccupation = Console.ReadLine();
+            UserFamilyMember.MemberOccupation = memberOccupation;
 
             //Return Member details
-            return prefix + userFirstName + " " + userLastName + " " + memberAge + "years   " + " " + Relation;
+            return prefix + userFirstName + " " + userLastName;
         }
     }
 
@@ -97,7 +111,7 @@ namespace DataOfFamily
         public string MemberLastName { get; set; }
 
         //Gender of the Member
-        public char MemberGender { get; set; }
+        public string MemberGender { get; set; }
 
         //Age of the Member
         public int MemberAge { get; set; }
