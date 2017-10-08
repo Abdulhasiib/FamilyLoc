@@ -15,22 +15,22 @@ namespace DataOfFamily
 
             string participantName = memberName();
 
-            Console.WriteLine("Hello " + participantName + ". ");
+            Console.WriteLine("Hello,   " + participantName + ". ");
             Console.Write("Tell us about your family. " +
                 "Howmany members you've in your family? " +
-                "Enter member: ");
+                "Enter member  : ");
             int members = Int32.Parse(Console.ReadLine());
 
             if (members > 5)
             {
-                Console.WriteLine("Wow! you've a big family.");
+                Console.WriteLine("Wow! you've a big family.....");
             }
             else
             {
-                Console.WriteLine("Cool! yours is a compact family.");
+                Console.WriteLine("Cool! yours is a compact family. Cool!");
             }
 
-            Console.WriteLine("Tell us about your family members?");
+            Console.WriteLine("Tell us about your family members, how many?");
 
             string[] familyMembers = new string[members];
 
