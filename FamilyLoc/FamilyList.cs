@@ -23,7 +23,7 @@ namespace DataOfFamily
 
             if (members > 5)
             {
-                Console.WriteLine("Wow! you've a big family.....");
+                Console.WriteLine("   Wow! you've a big family.....");
             }
             else
             {
@@ -80,11 +80,11 @@ namespace DataOfFamily
             int memberAge = Int32.Parse(Console.ReadLine());
 
             //Relation of Member with User
-            Console.Write("Tell us your relation with {0} {1} {2}", prefix, userFirstName + " ", userLastName);
+            Console.Write("Tell us your relation WITH {0} {1} {2}", prefix, userFirstName + " ", userLastName);
             string Relation = Console.ReadLine();
 
             //Return Member details
-            return prefix + userFirstName + " " + userLastName + " " + memberAge + "years" + " " + Relation;
+            return prefix + userFirstName + " " + userLastName + " " + memberAge + "years   " + " " + Relation;
         }
     }
 }
